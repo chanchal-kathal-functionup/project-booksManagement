@@ -26,9 +26,9 @@ const login = async function(req, res) {
             }
 
             let payload = { _id: check._id }
-            let token = jwt.sign(payload, 'projectThird')
+            let token = jwt.sign(payload, "Group46")
             res.header('x-api-key', token);
-            res.status(200).send({ status: true, data: "User login successfull", token: { token } })
+            res.status(200).send({ status: true, data: "User login successfull", token:  token  })
         } else {
             res.status(400).send({ status: false, msg: "must contain email and password" })
         }
