@@ -13,13 +13,19 @@ router.post("/login", loginController.login)
 
 router.post("/books", middleWare.user,booksController.createBook)
 
-router.get("/getbooks", middleWare.user, booksController.getBooks)
+router.get("/books", middleWare.user, booksController.getBooks)
 
-router.get("/getbook/:bookId",middleWare.user, booksController.getBookById)
+router.get("/books/:bookId",middleWare.user, booksController.getBooksById)
 
-router.put("/updatebooks/:bookId",middleWare.user,booksController.updateBooks)
+router.put("/books/:bookId",middleWare.user,booksController.updateBooks)
 
-router.delete("/deletebook/:bookId",middleWare.user, booksController.deleteBookByid)
+router.delete("/books/:bookId",middleWare.user, booksController.deleteBookByid)
+
+router.post("/books/:bookId/review",reviewController.createReview)
+
+router.delete("/books/:bookId/review/:reviewId",reviewController.deleteReviewById)
+
+router.put("/books/:bookId/review/:reviewId",reviewController.updateBookReview)
 
 
 
